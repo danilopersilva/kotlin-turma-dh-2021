@@ -25,12 +25,11 @@ class Ferrari : Automovel() {
     override fun equals(other: Any?): Boolean {
         return when(other) {
             is Ferrari -> {
-                if(this.nome == other?.nome && this.cor == other?.cor) return true
+                if(this.nome == other?.nome) return true
                 return false
             } else -> {
                 super.equals(other)
             }
         }
     }
-}
 }
