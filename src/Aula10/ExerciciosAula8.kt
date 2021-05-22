@@ -1,6 +1,6 @@
 fun main() {
     val danilo = Cliente(1234, "Pereira", "35619", "330432")
-    val contaPoupancaInter = ContaPoupanca(cliente = danilo, 1.0)
+    val contaPoupancaInter = Poupanca(cliente = danilo, 1.0)
     contaPoupancaInter.deposito(200.00)
     contaPoupancaInter.recolherJuros()
 }
@@ -32,7 +32,7 @@ open class Conta(cliente: Cliente) {
     }
 }
 
-class ContaPoupanca(
+class Poupanca(
     cliente: Cliente,
     var taxaJuros: Double = 3.5
 ) : Conta(cliente = cliente) {
@@ -44,7 +44,7 @@ class ContaPoupanca(
     }
 }
 
-class ContaCorrente(cliente: Cliente, var txJuros: Double) : Conta(cliente = cliente) {
+class CC(cliente: Cliente, var txJuros: Double) : Conta(cliente = cliente) {
 
 
     fun depositarCheque() {
